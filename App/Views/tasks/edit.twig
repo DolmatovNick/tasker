@@ -1,0 +1,12 @@
+{% extends "index.twig" %}
+
+{% block search_form %} {% endblock %}
+
+{% block main_content %}
+
+    <div class="task-edit">
+        <h3>{% block title %} Редактировать задачу {% endblock %}</h3>
+
+        {% include 'tasks/form.twig'%}
+    </div>
+{% endblock %}

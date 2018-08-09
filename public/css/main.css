@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Lobster&subset=cyrillic');
+
+/* -- GENERAL --*/
+html, body { background: #f9f2e2;}
+html { font-size: 10px;}
+body { font: 300 1.5rem/1.4em 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;}.navbar { margin-left: -20px; margin-right: -20px;}
+
+#main_content, .navbar-inner, #searchForm { margin-left: auto; margin-right: auto;}
+.navbar-inner, #searchForm { max-width: 1040px;}
+#main_content { max-width: 1040px;}
+
+
+/* -- NAV --*/
+.navbar { background: #241407;}
+.navbar-inner { border-radius: 0; border-width: 0; background: none; box-shadow: none;}
+.navbar .brand { margin-right: 20px; font-family: 'Lobster', cursive; font-size: 2.8rem; font-weight: 300; color: #f9f2e2; text-shadow: none;}
+.navbar .nav > li > a { padding: 15px 15px 5px; font-size: 1.2rem; font-weight: 400; color: #fff; text-transform: uppercase; text-shadow: none;}
+.navbar .nav > li > a:hover { color: #fff; text-decoration: underline;}
+.navbar .nav li:last-child a { padding-right: 0;}
+
+
+/* -- SEARCH & PAGINATION --*/
+#searchForm .pagination { float: left; margin: 15px 0 0;}
+.pagination ul { border-radius: 15px; box-shadow: none;}
+.pagination ul > li > a, .pagination ul > li > span { background: none!important; border: 0;}
+.pagination ul > li:first-child > a, .pagination ul > li:first-child > span { border-bottom-left-radius: 15px; border-top-left-radius: 15px;}
+.pagination ul > li:last-child > a, .pagination ul > li:last-child > span { border-bottom-right-radius: 15px; border-top-right-radius: 15px;}
+.pagination ul > .active > a, .pagination ul > .active > span { color: #664b35;}
+
+.task-sort-block { float: right; margin-left: 6px;}
+.task-sort-block label { font-size: 1rem; line-height: 1em; color: #3f2713; text-transform: uppercase;}
+.task-sort-block select { width: 150px; font-size: 1.3rem; font-weight: 300; border-radius: 0;}
+
+
+/* -- TASK-LIST --*/
+.task-list { display: flex; width: 100%; flex-wrap: wrap; flex-direction: row; justify-content: center;}
+.task-list h1 { font-weight: 300; width: 100%; color: #241407; text-align: center;}
+.task { position: relative; padding: 20px; max-width: 320px;}
+.task-list .task { display: flex; width: 33.33%; flex-basis: 33.33%;}
+.task-list h1 + .task { padding-left: 0;}
+.task-list h1 + .task + .task + .task { padding-right: 0;}
+.task-inner { position: relative; padding: 16px 20px 60px; width: 100%; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,.1);}
+.task h2 { margin-top: 0;}
+.task-text { text-align: justify;margin: 10px 0;}
+.task-text  .lead { font-size: 1.6rem; line-height: 1.4em;}
+.task-image-div { text-align: center; min-height: 240px;}
+.task-image-div img { max-width: 280px; width: auto; height: auto; }
+.task .btn-row { position: absolute; bottom: 20px; left: 40px; right: 40px;}
+.task .btn-row .checkbox { float: left; margin-top: 4px;}
+.task .btn-row .btn { float: right;}
+.task .btn-row .checkbox { padding-left: 0;}
+.task pre { margin: 0; padding: 0; font-size: inherit; line-height: inherit; background: none; border: 0; border-radius: 0; font-family: inherit; color: inherit; }
+
+
+/* -- TASK FORM --*/
+.task-edit h3 { font-weight: 300; text-align: center;}
+fieldset .span6 {}
+#taskForm { margin: 0 auto; padding: 20px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,.1);}
+#taskForm .btn-row { padding-top: 20px; text-align: right;}
+#taskForm .col + .col { padding-top: 2em;}
+#taskForm .col label, #taskForm .col .task-label { font-size: 1rem; color: #3f2713; text-transform: uppercase;}
+#taskForm .col label:not(.checkbox) { line-height: 1em;}
+#taskForm .col input[type="text"], #taskForm .col input[type="email"], #taskForm .col textarea { width: 100%; border-radius: 0; box-shadow: none;}
+#taskForm #resizedImage { border: 1px solid #ccc;}
+#taskForm .title { margin-bottom: 1em; font-size: 1rem; color: #3f2713; text-transform: uppercase;}
+#taskForm .title .task-id { font-size: 2rem; font-weight: 400;}
+
+/* -- BUTTONS --*/
+.btn { font-size: 1.1rem; font-weight: 400; letter-spacing: .01em; color: #f9f2e2!important; text-transform: uppercase; text-shadow: none; border-radius: 14px; border: 0; background: #a08c7c;}
+.btn:hover { background: #241407;}
+
+
+/* -- MODAL --*/
+#myModalLabel { font-weight: 300;}
+.modal-body { max-height: 440px; background: #f9f2e2;}
+.modal .task { margin: 0 auto; }
+.modal .task .btn-row { bottom: 20px;}
+.modal .task-image-div { min-height: 0; }
+.modal .task-inner { width: auto;}
+
+/* -- MOBILE MODE --*/
+@media (max-width: 768px) {
+    #main_content { margin: 0 -20px;}
+    .task-list {}
+    .task-list .task { padding: 20px!important; width: 100%;}
+    .task-inner { width: auto;}
+    .task-image-div { min-height: 0;}
+    .task-image-div img { max-width: 240px; width: auto; height: auto;}
+    .task-sort-block select { width: 280px;}
+}
+

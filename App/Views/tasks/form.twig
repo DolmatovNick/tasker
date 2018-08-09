@@ -1,0 +1,44 @@
+<form method="POST" action="/tasks" id="taskForm" name="uploadImageForm" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{ task.id }}">
+    <input type="hidden" name="image" value="{{ task.image }}">
+
+    {% if errors %}
+        {% for error in errors %}
+            <div id="errors" class="alert alert-error">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+
+    <fieldset class="clearfix">
+        <div class="col span6">
+            <label>Номер: {{ task.id }} </label>
+            <label>Имя пользователя</label>
+            <input required name="userName" type="text" maxlength="45" value="{{ task.userName }}">
+            <label>E-mail</label>
+            <input required name="email" type="email" maxlength="45" value="{{task.email}}">
+            <label>Текст задачи</label>
+            <textarea required name="text" rows="5" maxlength="255">{{task.text}}</textarea>
+
+            {% if logged_user %}
+                <label class="checkbox">
+                    <input name="executed" type="checkbox" value="1" {% if task.executed == 1 %} checked{% endif %}>Выполнено
+                </label>
+            {% endif %}
+        </div>
+
+        <div class="col span5 pull-right">
+            <label>Картинка</label>
+            <input type="file" name="image" id="takePictureField" accept="image/jpeg,image/gif,image/png" />
+            <label></label>
+            <img name="image" id="resizedImage" src="/{{task.image}}" >
+        </div>
+    </fieldset>
+
+    <div class="btn-row">
+        <button type="submit" class="btn" id="btnSave">Сохранить</button>
+        <input type="button" class="btn btn-info" id="btnPreview" value="Предварительный просмотр">
+    </div>
+</form>
+    
+    
+
+    

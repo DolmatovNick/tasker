@@ -1,0 +1,48 @@
+{% extends "index.twig" %}
+
+{% block title %} Список задач {% endblock %}
+    
+{% block search_form %}
+    
+    <form id="searchForm" action="/tasks" method="GET">
+
+        <div class="task-sort-block">
+            <label>Имя пользователя</label>
+            <select name="userName" class="sort" onchange="this.form.submit()">
+                <option></option>
+                <option value="asc" {% if sorts.userName == 'asc' %} selected {% endif %}>По возрастанию</option>
+                <option value="desc" {% if sorts.userName == 'desc' %} selected {% endif %}>По убыванию</option>
+            </select>
+        </div>
+        <div class="task-sort-block">
+            <label>E-mail</label>
+            <select name="email" class="sort" onchange="this.form.submit()">
+                <option></option>
+                <option value="asc" {% if sorts.email == 'asc' %} selected {% endif %}>По возрастанию</option>
+                <option value="desc" {% if sorts.email == 'desc' %} selected {% endif %}>По убыванию</option>
+            </select>
+        </div>
+        <div class="task-sort-block">
+            <label>Статус</label>
+            <select name="executed" class="sort" onchange="this.form.submit()">
+                <option></option>
+                <option value="asc" {% if sorts.executed == 'asc' %} selected {% endif %}>По возрастанию</option>
+                <option value="desc" {% if sorts.executed == 'desc' %} selected {% endif %}>По убыванию</option>
+            </select>
+        </div>
+        
+        <input type="hidden" id="page" name="page"/>
+        {{ pagination|raw }}
+    </form>
+    
+{% endblock %}
+
+{% block main_content %} 
+    
+    <div class="task-list">
+        <h1>Задачи</h1>
+        {% for task in tasks %}
+            {% include "tasks/taskForList.twig" %}
+        {% endfor %}
+    <div>
+{% endblock %}

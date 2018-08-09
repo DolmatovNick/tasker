@@ -1,0 +1,20 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <a class="brand" href="#">Задачник</a>
+        <ul class="nav">
+            <li><a href="/tasks">Список задач</a></li>
+            <li><a href="/tasks/create">Создать задачу</a></li>
+        </ul> 
+        
+        <ul class="nav pull-right">
+            <li><a href="">{{logged_user}}</a></li>
+            {% if logged_user  %}
+                <li><a href="/logout">Выход</a></li>
+            {% else %}
+                <li><a href="/login">Войти</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+        
+        

@@ -1,0 +1,30 @@
+<div id="preview" class="task">
+    <div class="task-inner">
+        <h2 name="userName">{{ task.userName }}</h2>
+        <p><a name="email" href="mailto:{{ task.email }}">{{ task.email }}</a></p>
+        <div class="task-image-div">
+            <img name="image" src="/{{ task.image}}" class="img-rounded">
+        </div>
+
+        <div class="task-text">
+            <p class="lead" name="text"><pre>{{ task.text }}</pre>
+        </div>
+
+        <div class="btn-row">
+
+            <div>
+                <label class="checkbox">
+                    <input name="executed" id="{{task.id}}" type="checkbox" class="taskcheck"
+                        {% if logged_user is empty %} disabled {% endif %}
+                        {% if task.executed == 1 %} checked{% endif %}> Выполнено
+                </label>
+            </div>
+
+            {% if logged_user %}
+                <a href="/tasks/{{task.id}}/edit" class="btn">Редактировать</a>
+            {% endif %}
+
+        </div>
+
+    </div>
+</div>

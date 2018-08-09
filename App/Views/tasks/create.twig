@@ -1,0 +1,11 @@
+{% extends "index.twig" %}
+
+{% block search_form %} {% endblock %}
+
+{% block main_content %} 
+
+    <h3>{% block title %} Создать задачу {% endblock %}</h3>
+
+    {% include 'tasks/form.twig'%}
+
+{% endblock %}
